@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
@@ -39,12 +40,14 @@ ForgotPassword.belongsTo(User);
 User.hasMany(Downloadfiles);
 Downloadfiles.belongsTo(User);
 
+const PORT = process.env.PORT || 3000;
+
 sequelize
   .sync()
   // .sync({ force: true })
   .then(() => {
     console.log("CONNECTED TO DATABASE");
-    app.listen(4000);
+    app.listen(PORT);
   })
   .catch((err) => console.log(err));
 
