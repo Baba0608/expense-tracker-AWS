@@ -33,6 +33,7 @@ const postExpense = async (req, res, next) => {
   }
 };
 
+// postIncome to the database
 const postIncome = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
