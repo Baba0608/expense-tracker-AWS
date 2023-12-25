@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    background-color: lightgray;
+    align-items: center;
+}
+
+.logo-title {
+    padding: 10px 20px;
+    margin: 0px 20px;
+}
+
+.nav-list {
+    width: 40%;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    margin: 0px 20px;
+
+}
+
+ul li {
+    padding: 10px;
+}
+
+.active-nav-item {
+    background-color: darkgray;
+}

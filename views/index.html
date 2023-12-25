@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="stylesheet" href="/public/css/header.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo-title">
+            <p>Expense Tracker</p>
+        </div>
+
+        <div class="nav-list">
+            <ul>
+                <li><a href="#">Buy Premium</a></li>
+                <li><a href="#">Summary</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="./login.html">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="signup-container">
+
+            <div class="msg" id="msg">
+                <p id="msg-para">Please enter all fields</p>
+            </div>
+
+            <div class="name-input">
+                <label for="username">Name</label> <br>
+                <input type="text" id="username" name="username" placeholder="name">
+            </div>
+
+            <div class="gmail-input">
+                <label for="gmail">Gmail</label> <br>
+                <input type="text" id="gmail" name="gmail" placeholder="gmail">
+            </div>
+
+            <div class="password-input">
+                <label for="password">Password</label> <br>
+                <input type="password" id="password" name="password" placeholder="password">
+            </div>
+
+            <div class="signup-btn-container">
+                <button id="signup-btn">Signup</button>
+            </div>
+
+
+            <div class="login-link">
+                <p>Already have an account. Click here to <a href="./login.html">Login</a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="/public/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightpink;
+    /* padding: 20px; */
+    font-size: 20px;
+}
+
+
+input,
+select {
+    margin-bottom: 10px;
+    font-size: 18px;
+    padding: 2px 3px;
+    width: 100%;
+}
+
+label {
+    font-size: 22px;
+}
+
+.add-expense-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.add-expense-button-container button {
+    font-size: 20px;
+    padding: 5px 15px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+
+#premium-user-item,
+#leaderboard {
+    display: none;
+}
+
+#premium-user-item a {
+    color: rgb(138, 119, 10);
+}
+
+#premium-user-item a:hover {
+    text-decoration: none;
+}
+
+
+.leaderboard-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.leaderboard-display {
+    background-color: lightgreen;
+    padding: 20px 20px 10px 20px;
+    border-radius: 20px;
+    width: 800px;
+    margin-top: 10px;
+
+}
+
+.user-div {
+    display: flex;
+    background-color: rgb(108, 198, 228);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.s-no {
+    width: 10%;
+}
+
+.name {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.total-income,
+.total-expense {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}
+
+
+
+.expense-filter-container {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.filter-container {
+    display: flex;
+}
+
+.filter {
+
+    padding: 10px 30px;
+    border: 1px solid black;
+    background-color: lightgoldenrodyellow;
+}
+
+.filter:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, .2);
+}
+
+.active {
+    background-color: rgb(55, 157, 192);
+}
+
+.daily,
+.monthly {
+    border-right: none;
+}
+
+
+
+.expense-list-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 366px;
+
+    /* background-color: lightgrey; */
+
+}
+
+table th,
+td {
+    border: 1px solid black;
+    min-width: 150px;
+    padding: 5px 10px;
+}
+
+table th {
+    background-color: rgb(55, 157, 192);
+    color: black;
+}
+
+table td {
+    background-color: lightblue;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.generate-report-add-expense {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.add-expense-div,
+.generate-report-div {
+    margin: 0px 10px;
+}
+
+#add-expense,
+#generate-report {
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+
+.expense-income {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    display: none;
+
+}
+
+.expense-income-input {
+    width: 500px;
+}
+
+.income-expense-buttons {
+
+    display: flex;
+
+}
+
+.income-button,
+.expense-button {
+
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.income-button:hover,
+.expense-button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+
+
+.income-button {
+    border-left: none;
+}
+
+.expense-input,
+.income-input {
+    margin-top: 20px;
+}
+
+.income-input {
+    display: none;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn button {
+    font-size: 20px;
+    padding: 5px 15px;
+}
+
+
+.download-report-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    display: none;
+}
+
+.download-button {
+    margin-bottom: 20px;
+}
+
+.downloaded-files {
+    margin-top: 10px;
+}
+
+.downloaded-files p {
+    margin-bottom: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-no {
+    border: 1px solid black;
+    padding: 5px 10px;
+    /* margin: 0px 10px; */
+    background-color: aliceblue;
+}
+
+.previous,
+.current,
+.next {
+    margin: 0px 10px;
+}
+
+.page-no:hover {
+    background-color: rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
+.active {
+    background-color: rgb(55, 157, 192);
+}
+
+.active:hover {
+    background-color: rgb(4, 189, 251);
+}

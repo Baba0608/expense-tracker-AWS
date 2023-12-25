@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense</title>
+    <link rel="stylesheet" href="/public/css/expense.css">
+    <link rel="stylesheet" href="/public/css/header.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo-title">
+            <p>Expense Tracker</p>
+        </div>
+
+        <div class="nav-list" id="nav-list">
+            <ul>
+                <li><a href="#" id="home">Home</a></li>
+                <li id="leaderboard"><a href="#">Leader Board</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="./login.html" id="login-logout">Login</a></li>
+                <li id="buy-premium-item"><a href="#" id="buy-premium">Buy Premium</a></li>
+                <li id="premium-user-item"><a href="#">You are Premium User</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <div class="container" id="container">
+
+        <div class="expense-filter-container">
+
+            <div class="filter-container">
+
+                <div class="daily filter active" id="daily">
+                    Daily
+                </div>
+
+                <div class="monthly filter" id="monthly">
+                    Monthly
+                </div>
+
+                <div class="yearly filter" id="yearly">
+                    Yearly
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="expense-list-container" id="expense-list-container">
+
+            <!-- <div class="daily-expense-list" id="daily-expense-list">
+
+                <table>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Income</th>
+                        <th>Expense</th>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="monthly-expense-list" id="monthly-expense-list">
+
+                <table>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Month</th>
+                        <th>Income</th>
+                        <th>Expense</th>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="yearly-expense-list" id="yearly-expense-list">
+
+                <table>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Year</th>
+                        <th>Income</th>
+                        <th>Expense</th>
+                    </tr>
+                </table>
+
+            </div> -->
+
+        </div>
+
+        <div class="pagination" id="pagination">
+
+            <div class="previous" id="previous">
+                <p id="previous-page" class="page-no">1</p>
+            </div>
+
+            <div class="current" id="current">
+                <p id="current-page" class="page-no active">1</p>
+            </div>
+
+            <div class="next" id="next">
+                <p id="next-page" class="page-no">2</p>
+            </div>
+        </div>
+
+        <div class="generate-report-add-expense" id="generate-report-add-expense">
+
+            <div class="add-expense-div">
+                <button id="add-expense">Add Expense</button>
+            </div>
+
+            <div class="generate-report-div">
+                <button id="generate-report">Generate Report</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="expense-income" id="expense-income">
+
+        <div class="expense-income-input" id="expense-income-input">
+
+            <div class="income-expense-buttons" id="income-expense-buttons">
+
+                <div class="expense-button active" id="expense-button">
+                    Add Expense
+                </div>
+
+                <div class="income-button" id="income-button">
+                    Add Income
+                </div>
+            </div>
+
+            <div class="expense-input" id="expense-input">
+
+                <label for="description">Description</label> <br>
+                <input type="text" name="description" id="description" placeholder="Description">
+
+                <label for="category">Category</label>
+                <select name="category" id="category">
+                    <option value="food">Food</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="education">Education</option>
+                    <option value="travel">Travel</option>
+                    <option value="health">Health</option>
+                    <option value="others">Others</option>
+                </select>
+
+                <label for="expense">Amount</label>
+                <input type="number" name="expense" id="expense" placeholder="Enter expense">
+
+                <div class="add-expense-button submit-btn">
+                    <button id="add-expense-btn">Add Expense</button>
+                </div>
+
+            </div>
+
+            <div class="income-input" id="income-input">
+
+                <label for="income-description">Description</label> <br>
+                <input type="text" name="description" id="income-description" placeholder="Description">
+
+                <label for="income-amount">Amount</label> <br>
+                <input type="number" name="amount" id="income-amount" placeholder="Enter amount">
+
+                <div class="add-income-button submit-btn">
+                    <button id="add-income-btn">Add Income</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="leaderboard-container" id="leaderboard-container">
+
+        <div class="leader-board-title">
+            <p>Leader Board</p>
+        </div>
+
+        <!-- <div class="leaderboard-display" id="leaderboard-display">
+
+            <div class="user-div">
+
+                <div class="name">
+                    <p>abc</p>
+                </div>
+
+                <div class="total">
+                    <p>350/-</p>
+                </div>
+
+            </div>
+
+        </div> -->
+
+    </div>
+
+
+    <div class="download-report-container" id="download-report-container">
+
+        <div class="download-button">
+            <p>Click below to downlod the report.</p>
+            <button id="download-report">download report</button>
+        </div>
+
+        <p>RECENTLY DOWNLOADED FILES</p>
+
+        <!-- <div class="downloaded-files" id="downloaded-files">
+
+
+        </div> -->
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="/public/js/expense.js"></script>
+</body>
+
+</html>
