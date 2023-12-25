@@ -1,3 +1,5 @@
+const WEBSITE_LINK = "http://localhost:4000";
+
 const gmailEl = document.getElementById("gmail");
 const passwordEl = document.getElementById("password");
 const msgContainer = document.getElementById("msg-container");
@@ -15,7 +17,7 @@ loginBtn.addEventListener("click", async (e) => {
       password: passwordEl.value,
     };
     try {
-      const result = await axios.post("http://localhost:4000/user/login", obj);
+      const result = await axios.post(`${WEBSITE_LINK}/user/login`, obj);
       console.log(result);
 
       if (result.data.success) {

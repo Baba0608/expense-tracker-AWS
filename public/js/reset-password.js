@@ -1,3 +1,5 @@
+const WEBSITE_LINK = "http://localhost:4000";
+
 const newPassword = document.getElementById("new-password");
 const conformPassword = document.getElementById("conform-password");
 const uniqueId = document.getElementById("unique-id");
@@ -30,7 +32,7 @@ submitButton.addEventListener("click", async (e) => {
 
       try {
         const result = await axios.post(
-          "http://localhost:4000/forgotpassword/updatepassword",
+          `${WEBSITE_LINK}/forgotpassword/updatepassword`,
           obj
         );
 

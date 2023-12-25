@@ -1,3 +1,5 @@
+const WEBSITE_LINK = "http://localhost:4000";
+
 const container = document.getElementById("container");
 const leaderBoardContainer = document.getElementById("leaderboard-container");
 const leaderBoardDisplay = document.getElementById("leaderboard-display");
@@ -72,7 +74,7 @@ const dailyTableTh = [
   );
 
   const token = localStorage.getItem("token");
-  const result = await axios.get(`http://localhost:4000/expense/dailydata/1`, {
+  const result = await axios.get(`${WEBSITE_LINK}/expense/dailydata/1`, {
     headers: { authorization: token, itemsPerPage: itemsPerPage },
   });
 
@@ -164,7 +166,7 @@ pageNumber.forEach((page) => {
 
     const token = localStorage.getItem("token");
     const result = await axios.get(
-      `http://localhost:4000/expense/dailydata/${pageNo}`,
+      `${WEBSITE_LINK}/expense/dailydata/${pageNo}`,
       { headers: { authorization: token, itemsPerPage: itemsPerPage } }
     );
 
@@ -263,7 +265,7 @@ dailyEl.addEventListener("click", async (e) => {
   // calling backend api for daily expenses
 
   const token = localStorage.getItem("token");
-  const result = await axios.get("http://localhost:4000/expense/dailydata/1", {
+  const result = await axios.get(`${WEBSITE_LINK}/expense/dailydata/1`, {
     headers: { authorization: token, itemsPerPage: itemsPerPage },
   });
 
@@ -366,7 +368,7 @@ monthlyEl.addEventListener("click", async (e) => {
 
   // calling backend api to get data
   const token = localStorage.getItem("token");
-  const result = await axios.get("http://localhost:4000/expense/monthlydata", {
+  const result = await axios.get(`${WEBSITE_LINK}/expense/monthlydata`, {
     headers: { authorization: token },
   });
 
@@ -420,7 +422,7 @@ yearlyEl.addEventListener("click", async (e) => {
 
   // calling backend api for yearly data
   const token = localStorage.getItem("token");
-  const result = await axios.get("http://localhost:4000/expense/yearlydata", {
+  const result = await axios.get(`${WEBSITE_LINK}/expense/yearlydata`, {
     headers: { authorization: token },
   });
 
@@ -464,17 +466,16 @@ buyPremium.addEventListener("click", async (e) => {
   try {
     const token = localStorage.getItem("token");
 
-    const response = await axios.get(
-      "http://localhost:4000/purchase/buypremium",
-      { headers: { authorization: token } }
-    );
+    const response = await axios.get(`${WEBSITE_LINK}/purchase/buypremium`, {
+      headers: { authorization: token },
+    });
     console.log(response);
     const options = {
       key: response.data.key_id,
       order_id: response.data.result.orderid,
       handler: async function (response) {
         const result = await axios.post(
-          "http://localhost:4000/purchase/updatetransactionstatus",
+          `${WEBSITE_LINK}/purchase/updatetransactionstatus`,
           {
             order_id: options.order_id,
             payment_id: response.razorpay_payment_id,
@@ -517,7 +518,7 @@ leaderBoard.addEventListener("click", async (e) => {
   downloadReportContainer.style.display = "none";
 
   leaderBoardContainer.style.display = "flex";
-  const result = await axios.get("http://localhost:4000/leaderboard");
+  const result = await axios.get(`${WEBSITE_LINK}/leaderboard`);
   console.log(result);
 
   const leaderBoardDisplay = document.createElement("div");
@@ -625,7 +626,7 @@ addExpenseButton.addEventListener("click", async (e) => {
 
   if (description != "" && category != "" && expense != "") {
     const result = await axios.post(
-      "http://localhost:4000/expense/addexpense",
+      `${WEBSITE_LINK}/expense/addexpense`,
       {
         description: description,
         category: category,
@@ -651,7 +652,7 @@ addIncomeButton.addEventListener("click", async (e) => {
 
   if (description != "" && income != "") {
     const result = await axios.post(
-      "http://localhost:4000/expense/addincome",
+      `${WEBSITE_LINK}/expense/addincome`,
       {
         description: description,
         income: income,
@@ -679,10 +680,9 @@ generatereport.addEventListener("click", async (e) => {
 
   // call api for links of already downloded files
   const token = localStorage.getItem("token");
-  const result = await axios.get(
-    "http://localhost:4000/expense/downloadedfiles",
-    { headers: { authorization: token } }
-  );
+  const result = await axios.get(`${WEBSITE_LINK}/expense/downloadedfiles`, {
+    headers: { authorization: token },
+  });
 
   console.log(result);
   result.data.fileLinks.forEach((file) => {
@@ -707,7 +707,7 @@ downloadReport.addEventListener("click", async (e) => {
   e.preventDefault();
 
   const token = localStorage.getItem("token");
-  const result = await axios.get("http://localhost:4000/expense/download", {
+  const result = await axios.get(`${WEBSITE_LINK}/expense/download`, {
     headers: { authorization: token },
   });
 

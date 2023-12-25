@@ -1,3 +1,5 @@
+const WEBSITE_LINK = "http://localhost:4000";
+
 const forgotPasswordDiv = document.getElementById("forgot-password-div");
 const resultBox = document.getElementById("result-box");
 const resultMsg = document.getElementById("result-msg");
@@ -10,7 +12,7 @@ submitBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
   if (gmailEl.value != "") {
-    const result = await axios.post("http://localhost:4000/forgotpassword", {
+    const result = await axios.post(`${WEBSITE_LINK}/forgotpassword`, {
       gmail: gmailEl.value,
     });
 
@@ -23,7 +25,7 @@ submitBtn.addEventListener("click", async (e) => {
 
       try {
         const response = await axios.get(
-          `http://localhost:4000/forgotpassword/resetpasswordmail/${id}`,
+          `${WEBSITE_LINK}/forgotpassword/resetpasswordmail/${id}`,
           { headers: { gmail: gmailEl.value } }
         );
 
