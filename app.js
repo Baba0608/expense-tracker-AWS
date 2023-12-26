@@ -42,6 +42,8 @@ Downloadfiles.belongsTo(User);
 
 const PORT = process.env.PORT || 4000;
 
+console.log("Hiii");
+
 sequelize
   .sync()
   // .sync({ force: true })
