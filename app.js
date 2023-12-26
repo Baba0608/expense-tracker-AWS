@@ -40,7 +40,7 @@ ForgotPassword.belongsTo(User);
 User.hasMany(Downloadfiles);
 Downloadfiles.belongsTo(User);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 sequelize
   .sync()
