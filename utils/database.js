@@ -9,12 +9,6 @@ const DB_HOST = process.env.DB_HOST;
 const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
   dialect: "mysql",
   host: DB_HOST,
-  port: "3306",
-  username: USER,
-  password: PASSWORD,
-  dialectOptions: {
-    ssl: "Amazon RDS",
-  },
 });
 
 console.log("success");
