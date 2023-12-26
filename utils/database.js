@@ -7,6 +7,7 @@ const PASSWORD = process.env.PASSWORD;
 const DB_HOST = process.env.DB_HOST;
 
 console.log(DB_HOST);
+console.log(PASSWORD);
 
 const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
   dialect: "mysql",
